@@ -1,11 +1,11 @@
 package insider.tests;
 import insider.pages.InsiderQaPage;
-import insider.utilities.ConfigurationReader;
 import insider.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import static insider.pages.InsiderQaPage.navigateToQaJobsPage;
 import static insider.pages.InsiderQaPage.switchToNewWindow;
 import static insider.utilities.BrowserUtilities.jsExecutor;
 import static insider.utilities.Driver.closeDriver;
@@ -22,9 +22,8 @@ public class InsiderQaPageTest  {
     @Test
     public void insiderUseQaCareersPageTest(){
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("useInsiderQaUrl"));
-        InsiderQaPage.acceptAllCookiesButton.click();
-        insiderQaPage.seeAllQaElements.click();
+        navigateToQaJobsPage();
+
         webDriverWait.until(ExpectedConditions.visibilityOf(insiderQaPage.QaFromDropdown));
         insiderQaPage.filterByLocationDropDown.click();
         actions.moveToElement(insiderQaPage.selectIstanbulTurkiyeButton);

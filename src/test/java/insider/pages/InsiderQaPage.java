@@ -1,5 +1,6 @@
 package insider.pages;
 
+import insider.utilities.ConfigurationReader;
 import insider.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +16,7 @@ public class InsiderQaPage {
     public static WebElement acceptAllCookiesButton;
 
     @FindBy(xpath ="//a[@class='btn btn-outline-secondary rounded text-medium mt-2 py-3 px-lg-5 w-100 w-md-50']")
-    public WebElement seeAllQaElements;
+    public static WebElement seeAllQaJobsLink;
 
     @FindBy(xpath = "(//span[@class='select2-selection select2-selection--single'])[1]")
     public WebElement filterByLocationDropDown;
@@ -56,6 +57,15 @@ public class InsiderQaPage {
                 break;
             }
         }
+    }
+
+
+    public static void navigateToQaJobsPage(){
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("useInsiderQaUrl"));
+        acceptAllCookiesButton.click();
+        seeAllQaJobsLink.click();
+
     }
 
 
