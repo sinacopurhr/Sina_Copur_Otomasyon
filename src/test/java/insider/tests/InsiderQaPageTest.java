@@ -1,28 +1,13 @@
 package insider.tests;
-
-import com.sun.jna.platform.unix.X11;
-import com.sun.org.glassfish.gmbal.Description;
 import insider.pages.InsiderQaPage;
-import insider.pages.InsiderUseMainPage;
-import insider.utilities.BrowserUtilities;
 import insider.utilities.ConfigurationReader;
 import insider.utilities.Driver;
-import net.bytebuddy.pool.TypePool;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.awt.*;
-
 import static insider.pages.InsiderQaPage.switchToNewWindow;
 import static insider.pages.InsiderUseMainPage.jsExecutor;
-import static insider.utilities.BrowserUtilities.sleep;
 import static insider.utilities.Driver.closeDriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -71,6 +56,7 @@ public class InsiderQaPageTest  {
 
         switchToNewWindow();
         assertEquals(Driver.getDriver().getTitle(), "Insider. - Software Quality Assurance Engineer");
+        log("New Window Handle is received");
 
         closeDriver();
 
