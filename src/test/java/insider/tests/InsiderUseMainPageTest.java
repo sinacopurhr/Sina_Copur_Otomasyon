@@ -1,5 +1,6 @@
 package insider.tests;
 
+import static insider.utilities.BrowserUtilities.jsExecutor;
 import insider.pages.InsiderUseMainPage;
 import org.testng.annotations.Test;
 import static insider.pages.InsiderUseMainPage.navigateToCareersPage;
@@ -17,7 +18,7 @@ public class InsiderUseMainPageTest {
 
         navigateToCareersPage();
 
-        InsiderUseMainPage.jsExecutor(insiderUseMainPage.findYourCallingTitle);
+        jsExecutor(insiderUseMainPage.findYourCallingTitle);
         assertTrue(insiderUseMainPage.findYourCallingTitle.isDisplayed(),
                 "Expected: 'Find Your Calling' title is displayed");
         log("'Find Your Calling' title is displayed",true);
@@ -26,7 +27,7 @@ public class InsiderUseMainPageTest {
         log("'Team List' is displayed and clickable",true);
 
         sleep(2);
-        InsiderUseMainPage.jsExecutor(insiderUseMainPage.ourLocationsTitle);
+        jsExecutor(insiderUseMainPage.ourLocationsTitle);
         assertTrue(insiderUseMainPage.ourLocationsTitle.isDisplayed(),
                 "Expected: 'Our Locations' title is displayed");
 
@@ -34,7 +35,7 @@ public class InsiderUseMainPageTest {
         assertTrue(insiderUseMainPage.verifyLocationList(insiderUseMainPage.locationList));
         log("'Location List' is displayed and clickable",true);
 
-        InsiderUseMainPage.jsExecutor(insiderUseMainPage.lifeAtInsiderTitle);
+        jsExecutor(insiderUseMainPage.lifeAtInsiderTitle);
         sleep(2);
         assertTrue(insiderUseMainPage.lifeAtInsiderTitle.isDisplayed());
         log("'Life At Insider' title is displayed",true);

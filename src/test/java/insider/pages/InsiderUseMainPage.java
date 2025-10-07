@@ -47,10 +47,10 @@ public class InsiderUseMainPage {
         careersPage.click();
     }
 
-    public static void jsExecutor(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].scrollIntoView(true)",element);
-    }
+//    public static void jsExecutor(WebElement element){
+//        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+//        js.executeScript("arguments[0].scrollIntoView(true)",element);
+//    }
 
     public boolean verifyTeamList(List<WebElement> teamList){
         for (WebElement teams : teamList) {

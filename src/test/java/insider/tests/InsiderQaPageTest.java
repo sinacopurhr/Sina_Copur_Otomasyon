@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import static insider.pages.InsiderQaPage.switchToNewWindow;
-import static insider.pages.InsiderUseMainPage.jsExecutor;
+import static insider.utilities.BrowserUtilities.jsExecutor;
 import static insider.utilities.Driver.closeDriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;

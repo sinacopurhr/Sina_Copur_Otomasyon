@@ -1,7 +1,9 @@
 package insider.utilities;
 
 import insider.pages.InsiderQaPage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.Set;
 
@@ -24,5 +26,11 @@ public class BrowserUtilities {
 
         }
     }
+
+    public static void jsExecutor(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true)",element);
+    }
+
 
 }
